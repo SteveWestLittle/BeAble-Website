@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Github from '../path/to/Github'; // Make sure to import the Github component
+import { Github } from 'lucide-react';
 
 function PageHeader() {
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Our Research' },
-    { path: '/app', label: 'Our App' },
-    { path: '/resources', label: 'Resources' },
-    { path: '/about', label: 'About Us' }
+    { to: '/', label: 'Our Research' },
+    { to: '/app', label: 'Our App' },
+    { to: '/resources', label: 'Resources' },
+    { to: '/about', label: 'About Us' }
   ];
 
   return (
-    <div className="rounded-t-3xl"> // Fix wrapper radius in PageHeader
+    <div className="rounded-t-2xl">
       <div className="text-center mb-12 pb-8 bg-gradient-to-b from-slate-200 to-slate-50 border-b-2 border-slate-300 -mx-6 -mt-10 px-6 pt-10 shadow-sm">
         <h1 className="text-6xl font-light text-slate-800 mb-4 tracking-wide">
           Be<span className="font-semibold">ABLE</span>
@@ -24,10 +24,10 @@ function PageHeader() {
         <div className="flex justify-center gap-8">
           {navLinks.map((link) => (
             <Link
-              key={link.path}
-              to={link.path}
+              key={link.to}
+              to={link.to}
               className={`text-lg font-medium tracking-wide transition-all hover:scale-105 ${
-                location.pathname === link.path
+                location.pathname === link.to
                   ? 'text-rose-600 font-semibold'
                   : 'text-slate-600 hover:text-slate-800'
               }`}
