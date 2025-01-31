@@ -107,9 +107,9 @@ function HomePage() {
   const redditChart = import.meta.env.DEV ? '/media/Reddit data NVIVO chart.png' : '/BeAble-Website/media/Reddit data NVIVO chart.png';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-200 to-slate-100">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
+        <div className="bg-white rounded-2xl shadow-xl px-6 py-10 relative border border-slate-100">
           <PageHeader />
 
           <div className="text-center mb-4">
