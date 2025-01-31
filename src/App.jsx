@@ -588,7 +588,7 @@ const App = () => {
     setScrollRequest(index);
   };
 
-  const redditChart = '/media/Reddit data NVIVO chart.png';
+  const redditChart = '/BeAble-Website/media/Reddit data NVIVO chart.png';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
