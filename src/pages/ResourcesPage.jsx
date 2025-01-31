@@ -47,6 +47,24 @@ function ResourcesPage() {
         <div className="bg-white rounded-[1rem] shadow-xl px-6 py-10 relative border border-slate-100">
           <PageHeader />
 
+          {/* Download Blueprint Section */}
+          <div className="text-center mt-12">
+            <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-2 inline-block">
+              Development Blueprint
+            </h2>
+            <div className="mt-4">
+              <a 
+                href="/media/BeAble App Design & Development Blueprint (1).docx"
+                className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download full development blueprint
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
           {/* Partnerships Section */}
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
@@ -173,16 +191,6 @@ function ResourcesPage() {
               ))}
             </div>
           </div>
-
-          <a 
-            href="/media/BeAble Research Summary.pdf" 
-            className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download Our Research Summary
-            <ArrowRight className="w-5 h-5" />
-          </a>
 
         </div>
       </div>
