@@ -72,8 +72,8 @@ function ResourcesPage() {
           </div>
 
           {/* Podcast Section */}
-          <div className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
+          <div className="max-w-3xl mx-auto mb-16 mt-6">
+            <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center mt-6">
               Breathing with Barriers Podcast
             </h2>
             <p className="text-slate-600 text-center mb-4">
