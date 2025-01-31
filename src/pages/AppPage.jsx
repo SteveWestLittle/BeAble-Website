@@ -7,7 +7,7 @@ function AppPage() {
     {
       title: "AI-Powered Communication",
       icon: Brain,
-      description: "Leveraging AI's technology to provide real-time communication assistance and support.",
+      description: "Leveraging AI technology to provide real-time communication assistance and support.",
       points: [
         "Natural language processing for intuitive interaction",
         "Context-aware responses and suggestions",
