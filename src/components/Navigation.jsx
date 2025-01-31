@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   const navItems = [
-    { name: 'Our Research', path: '/our-research' },
-    { name: 'Our App', path: '/our-app' },
-    { name: 'Research', path: '/research' },
-    { name: 'About Us', path: '/about-us' },
+    { path: '/research', label: 'Our Research' },
+    { path: '/app', label: 'Our App' },
+    { path: '/resources', label: 'Resources' },
+    { path: '/about', label: 'About Us' },
   ];
 
   return (
@@ -25,7 +25,7 @@ const Navigation = () => {
                 }`
               }
             >
-              {item.name}
+              {item.label}
             </NavLink>
           ))}
         </div>
