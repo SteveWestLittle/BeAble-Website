@@ -76,10 +76,13 @@ function ResourcesPage() {
             <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
               Breathing with Barriers Podcast
             </h2>
-            <div className="relative rounded-xl overflow-hidden shadow-lg">
+            <p className="text-slate-600 text-center mb-4">
+              Our podcast on the connection between air quality, health, and disability
+            </p>
+            <div className="relative rounded-xl overflow-hidden shadow-lg bg-slate-50">
               <video 
                 controls
-                className="w-full h-auto"
+                className="w-full h-[40px]"
                 preload="metadata"
               >
                 <source src="/media/podcast.mp4" type="video/mp4" />
