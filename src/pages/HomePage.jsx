@@ -119,7 +119,7 @@ function HomePage() {
             </h2>
           </div>
 
-          <div className="mt-2 text-center">
+          <div className="mt-1.5 mb-2.5 text-center">
             <a 
               href={literatureReview}
               className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
