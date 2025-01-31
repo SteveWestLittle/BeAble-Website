@@ -26,11 +26,11 @@ function PageHeader() {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-lg font-medium tracking-wide transition-all hover:scale-105 ${
+              className={`text-lg ${
                 location.pathname === link.to
-                  ? 'text-rose-600 font-semibold'
-                  : 'text-slate-600 hover:text-slate-800'
-              }`}
+                  ? 'text-blue-600 font-medium'
+                  : 'text-slate-600 hover:text-blue-600'
+              } transition-colors`}
             >
               {link.label}
             </Link>

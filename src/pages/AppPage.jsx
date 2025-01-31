@@ -100,7 +100,7 @@ function AppPage() {
             <div className="mt-2">
               <a 
                 href="/media/BeAble App Design & Development Blueprint (1).docx" 
-                className="text-rose-600 hover:text-rose-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
+                className="text-orange-600 hover:text-orange-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -147,7 +147,7 @@ function AppPage() {
           </div>
 
           {/* Community Impact */}
-          <div className="bg-rose-50 rounded-2xl p-8 shadow-sm mb-6">
+          <div className="bg-orange-50 rounded-2xl p-8 shadow-sm mb-6">
             <h3 className="text-2xl font-light text-slate-800 mb-6 text-center">Community Impact & Engagement</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {communityImpact.map((item, index) => {
@@ -158,8 +158,8 @@ function AppPage() {
                     className="bg-slate-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-rose-100 p-3 rounded-lg">
-                        <Icon className="w-6 h-6 text-rose-600" />
+                      <div className="bg-orange-100 p-3 rounded-lg">
+                        <Icon className="w-6 h-6 text-orange-600" />
                       </div>
                       <h3 className="text-xl font-semibold text-slate-800">
                         {item.title}
@@ -171,7 +171,7 @@ function AppPage() {
                     <ul className="space-y-2">
                       {item.highlights.map((point, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-slate-600">
-                          <span className="text-rose-500 mt-1">•</span>
+                          <span className="text-orange-500 mt-1">•</span>
                           {point}
                         </li>
                       ))}
