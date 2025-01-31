@@ -114,7 +114,7 @@ function HomePage() {
           <PageHeader />
 
           <div className="text-center mb-4">
-            <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-2 inline-block">
+            <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-[0.3rem] inline-block">
               Research Summary
             </h2>
           </div>
