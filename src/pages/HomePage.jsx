@@ -116,7 +116,7 @@ function HomePage() {
             <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-2 inline-block">
               Research Summary
             </h2>
-            <div className="mt-2">
+            <div>
               <a 
                 href="/media/BeABLE Research Paper (9).docx" 
                 className="text-rose-600 hover:text-rose-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
@@ -152,7 +152,7 @@ function HomePage() {
           */}
 
           {/* C1: Carousel Section */}
-          <div className="bg-green-50 rounded-2xl p-8 shadow-sm mb-6">
+          <div className="bg-green-50 rounded-2xl px-8 pb-8 shadow-sm mb-6">
             <Carousel 
               items={carouselItems} 
               currentIndex={currentSlideIndex}
