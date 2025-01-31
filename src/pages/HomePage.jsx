@@ -152,7 +152,7 @@ function HomePage() {
           */}
 
           {/* C1: Carousel Section */}
-          <div className="bg-green-50 rounded-2xl px-8 pb-8 shadow-sm mb-6">
+          <div className="bg-green-50 rounded-2xl px-8 shadow-sm mb-6">
             <Carousel 
               items={carouselItems} 
               currentIndex={currentSlideIndex}
