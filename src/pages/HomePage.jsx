@@ -113,7 +113,7 @@ function HomePage() {
         <div className="bg-white rounded-2xl shadow-xl px-6 py-10 relative border border-slate-100">
           <PageHeader />
 
-          <div className="text-center mb-2">
+          <div className="text-center mb-2 mt-[10px]">
             <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-[0.3rem] inline-block">
               Research Summary
             </h2>
