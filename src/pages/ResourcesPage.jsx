@@ -73,25 +73,18 @@ function ResourcesPage() {
 
           {/* Podcast Section */}
           <div className="max-w-3xl mx-auto mb-16">
-            <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
+            <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
               Breathing with Barriers Podcast
-            </h3>
-            <div className="bg-slate-100 rounded-xl p-6 shadow-md">
-              <div className="flex flex-col items-center space-y-4">
-                <div className="w-full max-w-md">
-                  <audio 
-                    className="w-full" 
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/path/to/audio.mp3" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-                <p className="text-slate-600 text-sm">
-                  Audio file coming soon...
-                </p>
-              </div>
+            </h2>
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <video 
+                controls
+                className="w-full h-auto"
+                preload="metadata"
+              >
+                <source src="/media/podcast.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
