@@ -4,14 +4,17 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/BeAble-Website/',  
+  base: './',
   plugins: [react()],
+  server: {
+    port: 5180
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
   css: {
-    postcss: './postcss.config.mjs'
+    postcss: './postcss.config.js'
   }
 })

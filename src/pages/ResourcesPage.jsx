@@ -1,130 +1,112 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHeader from '../components/PageHeader';
 
 function ResourcesPage() {
-  const [scrollRequest, setScrollRequest] = useState(null);
-  const refs = [useRef(), useRef(), useRef(), useRef()];
-
-  useEffect(() => {
-    if (scrollRequest !== null && refs[scrollRequest].current) {
-      refs[scrollRequest].current.scrollIntoView({ behavior: 'smooth' });
-      setScrollRequest(null);
+  const canadaLinks = [
+    {
+      title: "Creating Accessibility Standards",
+      description: "Learn about Canada's process for creating accessibility standards",
+      url: "https://accessible.canada.ca/creating-accessibility-standards"
+    },
+    {
+      title: "Disability Inclusion Action Plan",
+      description: "Canada's comprehensive plan for disability inclusion",
+      url: "https://www.canada.ca/en/employment-social-development/programs/disability-inclusion-action-plan.html"
+    },
+    {
+      title: "Digital Accessibility in Government",
+      description: "Guidelines for digital accessibility in Canadian government",
+      url: "https://a11y.canada.ca/en/digital-accessibility-in-the-government-of-canada/"
     }
-  }, [scrollRequest]);
-
-  const handleScrollClick = (index) => {
-    setScrollRequest(index);
-  };
-
-  const redditChart = import.meta.env.DEV ? '/media/Reddit data NVIVO chart.png' : '/BeAble-Website/media/Reddit data NVIVO chart.png';
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Resources
-          </h1>
-          <Link to="/" className="text-blue-600 hover:text-blue-800 text-lg font-semibold">
-            Home
-          </Link>
-          <p className="text-xl text-gray-600 mt-4">
-            Empowering the disability community through technology and research
-          </p>
-        </header>
+        <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
+          <PageHeader />
 
-        <nav className="mb-16">
-          <ul className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-            {['Our Mission', 'Research', 'Technology', 'Get Involved'].map((item, index) => (
-              <li key={item}>
-                <button
-                  onClick={() => handleScrollClick(index)}
-                  className="px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow duration-200 text-gray-700 hover:text-gray-900"
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light text-slate-800 mb-6 tracking-wide border-b border-slate-800 pb-2 inline-block">
+              Resources
+            </h2>
+          </div>
+
+          {/* Podcast Section */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
+              Breathing with Barriers Podcast
+            </h3>
+            <div className="bg-slate-100 rounded-xl p-6 shadow-md">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="w-full max-w-md">
+                  <audio 
+                    className="w-full" 
+                    controls
+                    preload="metadata"
+                  >
+                    <source src="/path/to/audio.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+                <p className="text-slate-600 text-sm">
+                  Audio file coming soon...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Affiliate Links Section */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
+              Affiliate Links
+            </h3>
+            <div className="flex justify-center">
+              <a 
+                href="https://glocalfoundation.ca/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+              >
+                <span className="font-semibold">GLOCAL Foundation</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Canada's Disability Actions Section */}
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
+              Canada's Disability Actions
+            </h3>
+            <div className="space-y-6">
+              {canadaLinks.map((link, index) => (
+                <div 
+                  key={index}
+                  className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
                 >
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <section ref={refs[0]} className="mb-20 scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Our Mission</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <p className="text-gray-600 leading-relaxed mb-6">
-              BeAble is dedicated to revolutionizing how people with disabilities navigate and interact with technology. 
-              Our mission is to create innovative solutions that enhance accessibility, promote independence, and improve 
-              the quality of life for individuals with disabilities.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Through cutting-edge research and technology development, we strive to bridge the gap between disability 
-              and accessibility, ensuring that everyone has equal access to digital resources and opportunities.
-            </p>
-          </div>
-        </section>
-
-        <section ref={refs[1]} className="mb-20 scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Research</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Understanding Community Needs</h3>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Our research focuses on understanding the unique challenges faced by people with disabilities in their 
-              daily interactions with technology. Through comprehensive analysis of community discussions and user 
-              experiences, we identify key areas where technological solutions can make the most impact.
-            </p>
-            <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={redditChart} 
-                alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
-                className="w-full h-auto"
-              />
-            </div>
-            <p className="text-sm text-gray-500 mt-4 text-center">
-              Analysis of discussions in disability-related communities
-            </p>
-          </div>
-        </section>
-
-        <section ref={refs[2]} className="mb-20 scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Technology</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Innovative Solutions</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We develop cutting-edge technologies that address specific challenges identified through our research. 
-                  Our solutions range from adaptive interfaces to AI-powered accessibility tools, all designed with the 
-                  user's needs at the forefront.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">User-Centered Design</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Every solution we create is developed in close collaboration with the disability community, ensuring 
-                  that our technology truly meets their needs and preferences while maintaining ease of use and 
-                  effectiveness.
-                </p>
-              </div>
+                  <a 
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <h4 className="text-xl font-semibold text-blue-600 mb-2 hover:text-blue-800 transition-colors">
+                      {link.title}
+                    </h4>
+                    <p className="text-slate-600">
+                      {link.description}
+                    </p>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
 
-        <section ref={refs[3]} className="scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Get Involved</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="max-w-2xl mx-auto">
-              <p className="text-gray-600 leading-relaxed mb-8 text-center">
-                Join us in our mission to make technology more accessible for everyone. Whether you're a developer, 
-                researcher, or community member, your contribution can make a difference.
-              </p>
-              <div className="flex justify-center">
-                <button className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 font-semibold">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
     </div>
   );

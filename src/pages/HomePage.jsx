@@ -1,18 +1,106 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import Carousel from '../components/Carousel';
+import AccessibilityGoalCarousel from '../components/AccessibilityGoalCarousel';
+import PageHeader from '../components/PageHeader';
+import { 
+  Brain, Shield, Users, MessageSquare, Heart, Activity,
+  Lightbulb, Workflow, Settings, GraduationCap, Target, Layers, ArrowRight
+} from 'lucide-react';
 
 function HomePage() {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [scrollRequest, setScrollRequest] = useState(null);
-  const refs = [useRef(), useRef(), useRef(), useRef()];
 
-  useEffect(() => {
-    if (scrollRequest !== null && refs[scrollRequest].current) {
-      refs[scrollRequest].current.scrollIntoView({ behavior: 'smooth' });
-      setScrollRequest(null);
+  const sections = [
+    { id: 'benefits', title: 'Benefits', index: 0 },
+    { id: 'challenges', title: 'Challenges', index: 1 },
+    { id: 'solutions', title: 'Solutions', index: 2 }
+  ];
+
+  const carouselItems = [
+    {
+      id: 'benefits',
+      title: 'Benefits of AI for People with Disabilities',
+      content: [
+        {
+          icon: <Brain className="w-8 h-8 text-emerald-600" />,
+          title: 'Enhanced Independence',
+          description: 'AI-powered assistive technologies enable greater autonomy in daily activities.'
+        },
+        {
+          icon: <Shield className="w-8 h-8 text-emerald-600" />,
+          title: 'Improved Safety',
+          description: 'Smart monitoring and alert systems help prevent accidents and provide timely assistance.'
+        },
+        {
+          icon: <Users className="w-8 h-8 text-emerald-600" />,
+          title: 'Social Inclusion',
+          description: 'Communication tools and social platforms facilitate better interaction and community participation.'
+        },
+        {
+          icon: <MessageSquare className="w-8 h-8 text-emerald-600" />,
+          title: 'Better Communication',
+          description: 'Advanced speech recognition and text-to-speech technologies break down communication barriers.'
+        }
+      ]
+    },
+    {
+      id: 'challenges',
+      title: 'Challenges in AI Accessibility',
+      content: [
+        {
+          icon: <Heart className="w-8 h-8 text-rose-600" />,
+          title: 'User Experience',
+          description: 'Ensuring AI interfaces are intuitive and accessible for users with different abilities.'
+        },
+        {
+          icon: <Activity className="w-8 h-8 text-rose-600" />,
+          title: 'Technical Limitations',
+          description: 'Addressing accuracy and reliability issues in AI-powered assistive technologies.'
+        },
+        {
+          icon: <Lightbulb className="w-8 h-8 text-rose-600" />,
+          title: 'Training Data',
+          description: 'Gathering diverse and representative data to train AI models effectively.'
+        },
+        {
+          icon: <Workflow className="w-8 h-8 text-rose-600" />,
+          title: 'Integration',
+          description: 'Seamlessly incorporating AI solutions into existing assistive technologies.'
+        }
+      ]
+    },
+    {
+      id: 'solutions',
+      title: 'Solutions and Future Directions',
+      content: [
+        {
+          icon: <Settings className="w-8 h-8 text-blue-600" />,
+          title: 'Customization',
+          description: 'Developing adaptable AI systems that cater to individual needs and preferences.'
+        },
+        {
+          icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
+          title: 'Education',
+          description: 'Training users and caregivers on effectively utilizing AI-powered assistive technologies.'
+        },
+        {
+          icon: <Target className="w-8 h-8 text-blue-600" />,
+          title: 'Standards',
+          description: 'Establishing accessibility guidelines for AI development and implementation.'
+        },
+        {
+          icon: <Layers className="w-8 h-8 text-blue-600" />,
+          title: 'Collaboration',
+          description: 'Fostering partnerships between technology providers and disability organizations.'
+        }
+      ]
     }
-  }, [scrollRequest]);
+  ];
 
-  const handleScrollClick = (index) => {
+  const handleNavClick = (e, index) => {
+    e.preventDefault();
+    setCurrentSlideIndex(index);
     setScrollRequest(index);
   };
 
@@ -21,56 +109,61 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            BeAble
-          </h1>
-          <Link to="/resources" className="text-blue-600 hover:text-blue-800 text-lg font-semibold">
-            Resources
-          </Link>
-          <p className="text-xl text-gray-600 mt-4">
-            Empowering the disability community through technology and research
-          </p>
-        </header>
+        <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
+          <PageHeader />
 
-        <nav className="mb-16">
-          <ul className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-            {['Our Mission', 'Research', 'Technology', 'Get Involved'].map((item, index) => (
-              <li key={item}>
-                <button
-                  onClick={() => handleScrollClick(index)}
-                  className="px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md transition-shadow duration-200 text-gray-700 hover:text-gray-900"
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <section ref={refs[0]} className="mb-20 scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Our Mission</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <p className="text-gray-600 leading-relaxed mb-6">
-              BeAble is dedicated to revolutionizing how people with disabilities navigate and interact with technology. 
-              Our mission is to create innovative solutions that enhance accessibility, promote independence, and improve 
-              the quality of life for individuals with disabilities.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Through cutting-edge research and technology development, we strive to bridge the gap between disability 
-              and accessibility, ensuring that everyone has equal access to digital resources and opportunities.
-            </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light text-slate-800 mb-3 tracking-wide border-b border-slate-800 pb-2 inline-block">
+              Our Research
+            </h2>
+            <div className="mt-2">
+              <a 
+                href="/media/BeABLE Research Paper (9).docx" 
+                className="text-rose-600 hover:text-rose-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read the full literature review here
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </div>
-        </section>
 
-        <section ref={refs[1]} className="mb-20 scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Research</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Understanding Community Needs</h3>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Our research focuses on understanding the unique challenges faced by people with disabilities in their 
-              daily interactions with technology. Through comprehensive analysis of community discussions and user 
-              experiences, we identify key areas where technological solutions can make the most impact.
+          {/* Hidden for now
+          <nav className="flex justify-center mb-12">
+            <div className="inline-flex gap-6 px-8 py-3 bg-white rounded-xl shadow-md border-2 border-slate-200">
+              {sections.map((section) => (
+                <React.Fragment key={section.id}>
+                  {section.index > 0 && <span className="text-slate-300 font-light">|</span>}
+                  <a
+                    href={`#${section.id}`}
+                    onClick={(e) => handleNavClick(e, section.index)}
+                    className={`text-sm font-medium tracking-wide transform hover:scale-105 transition-all
+                      ${currentSlideIndex === section.index 
+                        ? 'text-rose-800 font-semibold' 
+                        : 'text-rose-600 hover:text-rose-800'}`}
+                  >
+                    {section.title}
+                  </a>
+                </React.Fragment>
+              ))}
+            </div>
+          </nav>
+          */}
+
+          <Carousel 
+            items={carouselItems} 
+            currentIndex={currentSlideIndex}
+            onIndexChange={setCurrentSlideIndex}
+            onScrollRequest={scrollRequest}
+          />
+
+          <div className="mt-20 text-center">
+            <h2 className="text-3xl font-light text-slate-800 mb-2 tracking-wide">
+              Hot Topics for Persons with Disabilities
+            </h2>
+            <p className="text-slate-600 text-lg mb-8 font-light tracking-wide">
+              A qualitative data analysis of Reddit posts pertaining to disability in BC, Canada
             </p>
             <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
               <img 
@@ -79,52 +172,11 @@ function HomePage() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-gray-500 mt-4 text-center">
-              Analysis of discussions in disability-related communities
-            </p>
           </div>
-        </section>
 
-        <section ref={refs[2]} className="mb-20 scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Technology</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Innovative Solutions</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We develop cutting-edge technologies that address specific challenges identified through our research. 
-                  Our solutions range from adaptive interfaces to AI-powered accessibility tools, all designed with the 
-                  user's needs at the forefront.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">User-Centered Design</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Every solution we create is developed in close collaboration with the disability community, ensuring 
-                  that our technology truly meets their needs and preferences while maintaining ease of use and 
-                  effectiveness.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+          <AccessibilityGoalCarousel />
 
-        <section ref={refs[3]} className="scroll-mt-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Get Involved</h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="max-w-2xl mx-auto">
-              <p className="text-gray-600 leading-relaxed mb-8 text-center">
-                Join us in our mission to make technology more accessible for everyone. Whether you're a developer, 
-                researcher, or community member, your contribution can make a difference.
-              </p>
-              <div className="flex justify-center">
-                <button className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-200 font-semibold">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
     </div>
   );
