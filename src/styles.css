@@ -1,0 +1,48 @@
+/* Custom styles to support our components */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-slate-100 {
+  --tw-gradient-from: #f1f5f9;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(241 245 249 / 0));
+}
+
+.to-slate-50 {
+  --tw-gradient-to: #f8fafc;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.bg-white\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
+.bg-white\/90 {
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.scale-102 {
+  transform: scale(1.02);
+}
+
+/* Transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.transform {
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-12 {
+  --tw-translate-x: -3rem;
+}
+
+.translate-x-12 {
+  --tw-translate-x: 3rem;
+}
