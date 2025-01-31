@@ -111,7 +111,7 @@ function AppPage() {
           </div>
 
           {/* Core Features */}
-          <div className="bg-rose-50 rounded-2xl p-8 shadow-sm mb-6">
+          <div className="bg-blue-50 rounded-2xl p-8 shadow-sm mb-6">
             <h3 className="text-2xl font-light text-slate-800 mb-6 text-center">Core Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {appFeatures.map((feature, index) => {
@@ -119,11 +119,11 @@ function AppPage() {
                 return (
                   <div 
                     key={index}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+                    className="bg-slate-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-rose-100 p-3 rounded-lg">
-                        <Icon className="w-6 h-6 text-rose-600" />
+                      <div className="bg-blue-100 p-3 rounded-lg">
+                        <Icon className="w-6 h-6 text-blue-600" />
                       </div>
                       <h3 className="text-xl font-semibold text-slate-800">
                         {feature.title}
@@ -134,6 +134,42 @@ function AppPage() {
                     </p>
                     <ul className="space-y-2">
                       {feature.points.map((point, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-slate-600">
+                          <span className="text-blue-500 mt-1">•</span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Community Impact */}
+          <div className="bg-rose-50 rounded-2xl p-8 shadow-sm mb-6">
+            <h3 className="text-2xl font-light text-slate-800 mb-6 text-center">Community Impact & Engagement</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {communityImpact.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div 
+                    key={index}
+                    className="bg-slate-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="bg-rose-100 p-3 rounded-lg">
+                        <Icon className="w-6 h-6 text-rose-600" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-slate-800">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <p className="text-slate-600 mb-4 leading-relaxed">
+                      {item.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {item.highlights.map((point, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-slate-600">
                           <span className="text-rose-500 mt-1">•</span>
                           {point}
@@ -146,44 +182,8 @@ function AppPage() {
             </div>
           </div>
 
-          {/* Community Impact */}
-          <div className="bg-green-50 rounded-2xl p-8 shadow-sm mb-6">
-            <h3 className="text-2xl font-light text-slate-800 mb-6 text-center">Community Impact & Engagement</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {communityImpact.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div 
-                    key={index}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-green-100 p-3 rounded-lg">
-                        <Icon className="w-6 h-6 text-green-600" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-slate-800">
-                        {item.title}
-                      </h3>
-                    </div>
-                    <p className="text-slate-600 mb-4 leading-relaxed">
-                      {item.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {item.highlights.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-slate-600">
-                          <span className="text-green-500 mt-1">•</span>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
           {/* Development Principles */}
-          <div className="bg-blue-50 rounded-2xl p-8 shadow-sm">
+          <div className="bg-green-50 rounded-2xl p-8 shadow-sm">
             <h3 className="text-2xl font-light text-slate-800 mb-6 text-center">Development Principles</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {developmentPrinciples.map((principle, index) => {
@@ -191,10 +191,10 @@ function AppPage() {
                 return (
                   <div 
                     key={index}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow text-center"
+                    className="bg-slate-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow text-center"
                   >
-                    <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
-                      <Icon className="w-6 h-6 text-blue-600" />
+                    <div className="bg-green-100 p-3 rounded-lg inline-block mb-4">
+                      <Icon className="w-6 h-6 text-green-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-slate-800 mb-3">
                       {principle.title}

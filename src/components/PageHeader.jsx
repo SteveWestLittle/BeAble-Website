@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Github from '../path/to/Github'; // Make sure to import the Github component
 
 function PageHeader() {
   const location = useLocation();
@@ -12,7 +13,7 @@ function PageHeader() {
   ];
 
   return (
-    <>
+    <div className="rounded-t-3xl"> // Fix wrapper radius in PageHeader
       <div className="text-center mb-12 pb-8 bg-gradient-to-b from-slate-200 to-slate-50 border-b-2 border-slate-300 -mx-6 -mt-10 px-6 pt-10 shadow-sm">
         <h1 className="text-6xl font-light text-slate-800 mb-4 tracking-wide">
           Be<span className="font-semibold">ABLE</span>
@@ -36,7 +37,19 @@ function PageHeader() {
           ))}
         </div>
       </div>
-    </>
+      <div className="absolute top-0 right-0 p-4">
+        <div className="flex space-x-4">
+          <a
+            href="https://github.com/SteveWestLittle/BeAble-Website"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-500 hover:text-slate-700 transition-colors"
+          >
+            <Github className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 
