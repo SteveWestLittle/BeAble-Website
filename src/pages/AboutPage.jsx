@@ -7,16 +7,9 @@ function AboutPage() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
           <PageHeader />
-          
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-800 mb-6 tracking-wide border-b border-slate-800 pb-2 inline-block">
-              About Us
-            </h2>
-          </div>
 
-          {/* About content will go here */}
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-light text-slate-800 mb-6 tracking-wide border-b border-slate-800 pb-2 inline-block">
+            <h2 className="text-4xl font-light text-slate-800 mb-0 tracking-wide border-b border-slate-800 pb-2 inline-block">
               About Us
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
