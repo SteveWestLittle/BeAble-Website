@@ -87,6 +87,8 @@ function AppPage() {
     }
   ];
 
+  const developmentBlueprint = "/media/BeAble App Design & Development Blueprint (1).docx";
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-200 to-slate-100">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -99,12 +101,12 @@ function AppPage() {
             </h2>
             <div className="mt-2">
               <a 
-                href="/media/BeAble App Design & Development Blueprint (1).docx" 
+                href={developmentBlueprint}
                 className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download Our Development Blueprint
+                Download full development blueprint
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
