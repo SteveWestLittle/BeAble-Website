@@ -7,6 +7,7 @@ import {
   Briefcase, GanttChartSquare
 } from 'lucide-react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Navigation from './components/Navigation';
 
 const Factoid = ({ icon: Icon, title, content }) => (
   <div className="bg-slate-50/50 backdrop-blur-sm border border-slate-200 rounded-lg p-4 flex gap-4 items-start max-w-[500px]">
@@ -596,7 +597,7 @@ const App = () => {
             BeAble
           </h1>
         </div>
-        {/* <Navigation /> */}
+        <Navigation />
         <Routes>
           <Route path="/" element={<Navigate to="/our-research" replace />} />
           <Route path="/our-research" element={
