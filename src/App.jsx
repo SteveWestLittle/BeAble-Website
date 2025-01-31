@@ -6,6 +6,7 @@ import {
   Accessibility, Building2, HandMetal, Glasses, Megaphone,
   Briefcase, GanttChartSquare
 } from 'lucide-react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 const Factoid = ({ icon: Icon, title, content }) => (
   <div className="bg-slate-50/50 backdrop-blur-sm border border-slate-200 rounded-lg p-4 flex gap-4 items-start max-w-[500px]">
@@ -379,8 +380,7 @@ const AccessibilityGoalCarousel = () => {
 };
 
 const App = () => {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [scrollRequest, setScrollRequest] = useState(0);
+  const redditChart = import.meta.env.DEV ? '/media/Reddit data NVIVO chart.png' : '/BeAble-Website/media/Reddit data NVIVO chart.png';
 
   const facts = {
     healthcare: {
@@ -584,90 +584,60 @@ const App = () => {
 
   const handleNavClick = (e, index) => {
     e.preventDefault();
-    setCurrentSlideIndex(index);
-    setScrollRequest(index);
+    // setCurrentSlideIndex(index);
+    // setScrollRequest(index);
   };
 
-  const redditChart = '/BeAble-Website/media/Reddit data NVIVO chart.png';
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
-          <div className="text-center mb-8">
-            <h1 className="text-6xl font-light text-slate-800 mb-4 tracking-wide">
-              Be<span className="font-semibold">Able</span>
-            </h1>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed font-light tracking-wide">
-              Exploring the interconnected ecosystem of benefits, challenges, and solutions 
-              in creating inclusive AI technologies
-            </p>
-          </div>
-
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-800 mb-3 tracking-wide">
-              Our Research in Summary
-            </h2>
-            <a 
-              href="/media/BeABLE Research Paper (9).docx" 
-              className="text-rose-600 hover:text-rose-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the full literature review here
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
-
-          <nav className="flex justify-center mb-12">
-            <div className="inline-flex gap-6 px-8 py-3 bg-white rounded-xl shadow-md border-2 border-slate-200">
-              {sections.map((section) => (
-                <React.Fragment key={section.id}>
-                  {section.index > 0 && <span className="text-slate-300 font-light">|</span>}
-                  <a
-                    href={`#${section.id}`}
-                    onClick={(e) => handleNavClick(e, section.index)}
-                    className={`text-sm font-medium tracking-wide transform hover:scale-105 transition-all
-                      ${currentSlideIndex === section.index 
-                        ? 'text-rose-800 font-semibold' 
-                        : 'text-rose-600 hover:text-rose-800'}`}
-                  >
-                    {section.title}
-                  </a>
-                </React.Fragment>
-              ))}
-            </div>
-          </nav>
-
-          <Carousel 
-            items={carouselItems} 
-            currentIndex={currentSlideIndex}
-            onIndexChange={setCurrentSlideIndex}
-            onScrollRequest={scrollRequest}
-          />
-
-          <AccessibilityGoalCarousel />
-
-          <div className="mt-20 text-center">
-            <h2 className="text-3xl font-light text-slate-800 mb-2 tracking-wide">
-              Hot Topics for Persons with Disabilities
-            </h2>
-            <p className="text-slate-600 text-lg mb-8 font-light tracking-wide">
-              A qualitative data analysis of Reddit posts pertaining to disability in BC, Canada
-            </p>
-            <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={redditChart} 
-                alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+    <Router basename={import.meta.env.DEV ? '/' : '/BeAble-Website'}>
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-6xl font-bold text-center text-gray-900 mb-8">
+            BeAble
+          </h1>
         </div>
+        {/* <Navigation /> */}
+        <Routes>
+          <Route path="/" element={<Navigate to="/our-research" replace />} />
+          <Route path="/our-research" element={
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Research</h2>
+              <p className="text-lg text-gray-600 mb-12">
+                We conducted extensive research to understand the needs of people with disabilities
+                when using social media platforms. Our findings have shaped the development of BeAble.
+              </p>
+              <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={redditChart} 
+                  alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          } />
+          <Route path="/our-app" element={
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">Our App</h2>
+              <Carousel items={carouselItems} />
+            </div>
+          } />
+          <Route path="/research" element={
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">Research</h2>
+              <AccessibilityGoalCarousel />
+            </div>
+          } />
+          <Route path="/about-us" element={
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">About Us</h2>
+              <p className="text-lg text-gray-600 mb-12">
+                We are a team of passionate individuals dedicated to creating accessible technologies.
+              </p>
+            </div>
+          } />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 };
 
