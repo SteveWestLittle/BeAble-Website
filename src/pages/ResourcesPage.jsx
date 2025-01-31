@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import ArrowRight from '../components/ArrowRight';
 import GlocalLogo from '../assets/glocal.png';
+import podcastAudio from '../assets/podcast.mp4';
 
 function ResourcesPage() {
   const canadaLinks = [
@@ -85,7 +86,7 @@ function ResourcesPage() {
                 className="w-full"
                 preload="metadata"
               >
-                <source src="/media/podcast.mp4" type="audio/mp4" />
+                <source src={podcastAudio} type="audio/mp4" />
                 Your browser does not support the audio element.
               </audio>
             </div>
