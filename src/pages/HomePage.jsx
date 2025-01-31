@@ -104,6 +104,7 @@ function HomePage() {
     setScrollRequest(index);
   };
 
+  const literatureReview = import.meta.env.DEV ? '/media/BeABLE Research Paper (9).docx' : '/BeAble-Website/media/BeABLE Research Paper (9).docx';
   const redditChart = import.meta.env.DEV ? '/media/Reddit data NVIVO chart.png' : '/BeAble-Website/media/Reddit data NVIVO chart.png';
 
   return (
@@ -116,17 +117,18 @@ function HomePage() {
             <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-2 inline-block">
               Research Summary
             </h2>
-            <div>
-              <a 
-                href="/media/BeABLE Research Paper (9).docx" 
-                className="text-rose-600 hover:text-rose-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download the full literature review here
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <a 
+              href={literatureReview}
+              className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download the full literature review
+              <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
 
           {/* Hidden for now
