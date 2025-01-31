@@ -1,13 +1,13 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
-import { ArrowRight, Smartphone, Code, Users, Target, Cog, Shield, Heart, Brain, Zap, HandHeart, Globe, MessageSquare } from 'lucide-react';
+import { ArrowRight, Smartphone, Code, Users, Target, Cog, Shield, Heart, Brain, Zap, HandHeart, Globe, MessageSquare, Search } from 'lucide-react';
 
 function AppPage() {
   const appFeatures = [
     {
       title: "AI-Powered Communication",
       icon: Brain,
-      description: "Leveraging OpenAI's technology to provide real-time communication assistance and support.",
+      description: "Leveraging AI's technology to provide real-time communication assistance and support.",
       points: [
         "Natural language processing for intuitive interaction",
         "Context-aware responses and suggestions",
