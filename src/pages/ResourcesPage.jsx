@@ -174,6 +174,16 @@ function ResourcesPage() {
             </div>
           </div>
 
+          <a 
+            href="/media/BeAble Research Summary.pdf" 
+            className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download Our Research Summary
+            <ArrowRight className="w-5 h-5" />
+          </a>
+
         </div>
       </div>
     </div>

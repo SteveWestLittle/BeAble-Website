@@ -100,11 +100,11 @@ function AppPage() {
             <div className="mt-2">
               <a 
                 href="/media/BeAble App Design & Development Blueprint (1).docx" 
-                className="text-slate-700 hover:text-slate-900 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all border-b-2 border-slate-300 hover:border-slate-500 pb-1"
+                className="text-cyan-600 hover:text-cyan-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download our App Design & Development Blueprint
+                Download Our Development Blueprint
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
