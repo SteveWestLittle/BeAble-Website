@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import HexCard from './HexCard';
 import { 
-  Briefcase, Building2, MessageSquare, Phone, ShoppingBag
+  Briefcase, Building2, MessageSquare, Phone, ShoppingBag,
+  Settings
 } from 'lucide-react';
 
 const AccessibilityGoalCarousel = () => {
@@ -66,6 +67,18 @@ const AccessibilityGoalCarousel = () => {
         'Health management systems',
         'Improved service accessibility',
         'Healthcare integration tools'
+      ]
+    },
+    {
+      icon: Settings,
+      title: 'Design & Delivery',
+      category: 'goal',
+      items: [
+        'Adaptive educational programs with AI customization',
+        'User-centered design with interdisciplinary teams',
+        'Bias-controlled AI systems and chatbots',
+        'Transparent and explainable AI solutions',
+        'Collaborative development with disability experts'
       ]
     }
   ];

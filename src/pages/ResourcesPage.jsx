@@ -30,7 +30,7 @@ function ResourcesPage() {
       url: "https://ubcduc.wixsite.com/website/provincial-federal"
     },
     {
-      title: "DGSA Graduate Student Starter Kit",
+      title: "UBC Disabled Graduate Student Association (DGSA)",
       description: "Essential resources and information for graduate students with disabilities at UBC.",
       url: "https://destiny-healer-770.notion.site/DGSA-Grad-Student-Starter-Kit-c90fc238380f4c5d8c5fe173e698999c"
     },
@@ -160,7 +160,7 @@ function ResourcesPage() {
                     href={network.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block"
+                    className="block text-center"
                   >
                     <h3 className="text-xl font-semibold text-blue-600 mb-2 hover:text-blue-800 transition-colors">
                       {network.title}
