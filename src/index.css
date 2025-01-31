@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles.css';
+
+.scale-102 {
+  transform: scale(1.02);
+}
