@@ -23,6 +23,24 @@ function ResourcesPage() {
     }
   ];
 
+  const ubcNetworks = [
+    {
+      title: "Provincial & Federal Disability Support",
+      description: "Comprehensive guide to provincial and federal disability support resources and programs.",
+      url: "https://ubcduc.wixsite.com/website/provincial-federal"
+    },
+    {
+      title: "DGSA Graduate Student Starter Kit",
+      description: "Essential resources and information for graduate students with disabilities at UBC.",
+      url: "https://destiny-healer-770.notion.site/DGSA-Grad-Student-Starter-Kit-c90fc238380f4c5d8c5fe173e698999c"
+    },
+    {
+      title: "Disability Affinity Group Events",
+      description: "Stay updated with events and activities organized by UBC's Disability Affinity Group.",
+      url: "https://disabilityaffinitygroup.ubc.ca/events/"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -134,6 +152,35 @@ function ResourcesPage() {
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </a>
+            </div>
+          </div>
+
+          {/* UBC Disability Support Networks */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
+              UBC Disability Support Networks
+            </h2>
+            <div className="space-y-6">
+              {ubcNetworks.map((network, index) => (
+                <div 
+                  key={index}
+                  className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <a 
+                    href={network.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <h3 className="text-xl font-semibold text-blue-600 mb-2 hover:text-blue-800 transition-colors">
+                      {network.title}
+                    </h3>
+                    <p className="text-slate-600">
+                      {network.description}
+                    </p>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
 
