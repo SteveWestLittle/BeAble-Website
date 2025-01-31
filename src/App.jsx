@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Research from './pages/Research';
-import App from './pages/App';
+import AppPage from './pages/AppPage';
 import Resources from './pages/Resources';
 import About from './pages/About';
 
@@ -21,7 +21,7 @@ const MainApp = () => {
         <Navigation />
         <Routes>
           <Route path="/research" element={<Research />} />
-          <Route path="/app" element={<App />} />
+          <Route path="/app" element={<AppPage />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/about" element={<About />} />
           <Route path="/" element={<Navigate to="/research" replace />} />
