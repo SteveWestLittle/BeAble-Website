@@ -116,12 +116,12 @@ function HomePage() {
             <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-2 inline-block">
               Research Summary
             </h2>
-            <div>
+            <div className="text-center mt-8">
               <a 
-                href="/media/BeABLE Research Paper (9).docx" 
-                className="text-rose-600 hover:text-rose-800 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all"
+                href="/media/BeABLE Research Paper (9).docx"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-slate-700 hover:text-slate-900 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all border-b-2 border-slate-300 hover:border-slate-500 pb-1"
               >
                 Download the full literature review here
                 <ArrowRight className="w-5 h-5" />
@@ -176,6 +176,17 @@ function HomePage() {
                   alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
                   className="w-full h-auto"
                 />
+              </div>
+              <div className="text-center mt-8">
+                <a 
+                  href={redditChart}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-700 hover:text-slate-900 transition-colors text-lg font-light tracking-wide inline-flex items-center gap-1 hover:gap-2 transition-all border-b-2 border-slate-300 hover:border-slate-500 pb-1"
+                >
+                  Download Reddit Data Analysis
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>
