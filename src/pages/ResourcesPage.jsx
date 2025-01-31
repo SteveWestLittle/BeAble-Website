@@ -80,14 +80,14 @@ function ResourcesPage() {
               Our podcast on the connection between air quality, health, and disability
             </p>
             <div className="relative rounded-xl overflow-hidden shadow-lg bg-slate-50">
-              <video 
+              <audio 
                 controls
-                className="w-full h-[40px]"
+                className="w-full"
                 preload="metadata"
               >
-                <source src="/media/podcast.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+                <source src="/media/podcast.mp4" type="audio/mp4" />
+                Your browser does not support the audio element.
+              </audio>
             </div>
           </div>
 
