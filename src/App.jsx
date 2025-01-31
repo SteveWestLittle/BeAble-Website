@@ -588,6 +588,8 @@ const App = () => {
     setScrollRequest(index);
   };
 
+  const redditChart = '/media/Reddit data NVIVO chart.png';
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-50">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -657,7 +659,7 @@ const App = () => {
             </p>
             <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
               <img 
-                src="/media/Reddit data NVIVO chart.png" 
+                src={redditChart} 
                 alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
                 className="w-full h-auto"
               />
