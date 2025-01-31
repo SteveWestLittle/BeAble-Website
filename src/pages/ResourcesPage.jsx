@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import ArrowRight from '../components/ArrowRight';
+import GlocalLogo from '../assets/glocal.png';
 
 function ResourcesPage() {
   const canadaLinks = [
@@ -47,7 +48,7 @@ function ResourcesPage() {
                 className="flex flex-col items-center group"
               >
                 <img
-                  src="/media/glocal.png"
+                  src={GlocalLogo}
                   alt="Glocal Foundation Logo"
                   className="w-48 h-auto transition-transform group-hover:scale-105"
                 />
