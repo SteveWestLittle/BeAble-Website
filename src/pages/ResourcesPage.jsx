@@ -25,8 +25,8 @@ function ResourcesPage() {
 
   const ubcNetworks = [
     {
-      title: "Provincial & Federal Disability Support",
-      description: "Comprehensive guide to provincial and federal disability support resources and programs.",
+      title: "Disabilities United Collective",
+      description: "An advocacy and support resource group for disabled students at UBC",
       url: "https://ubcduc.wixsite.com/website/provincial-federal"
     },
     {
@@ -46,12 +46,6 @@ function ResourcesPage() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
           <PageHeader />
-
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-800 mb-6 tracking-wide border-b border-slate-800 pb-2 inline-block">
-              Resources
-            </h2>
-          </div>
 
           {/* Partnerships Section */}
           <div className="max-w-3xl mx-auto mb-16">
@@ -156,7 +150,7 @@ function ResourcesPage() {
           </div>
 
           {/* UBC Disability Support Networks */}
-          <div className="max-w-3xl mx-auto mb-16">
+          <div className="max-w-3xl mx-auto mb-16 mt-10">
             <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
               UBC Disability Support Networks
             </h2>
