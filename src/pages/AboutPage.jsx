@@ -15,9 +15,12 @@ function AboutPage() {
           </div>
 
           {/* About content will go here */}
-          <div className="max-w-3xl mx-auto">
-            <p className="text-slate-600 text-lg text-center">
-              Coming soon...
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-light text-slate-800 mb-6 tracking-wide border-b border-slate-800 pb-2 inline-block">
+              About Us
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              BeAble was started by Diana Drozdzik and Steven Little, both of whom have a deep personal relationship with disability and a heartfelt passion to help others. We are deeply grateful for the funding, support, and guidance from the non-profit organization GLOCAL, and we can't wait to take the next steps in the future of BeAble!
             </p>
           </div>
         </div>
