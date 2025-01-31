@@ -112,9 +112,9 @@ function HomePage() {
         <div className="bg-white rounded-2xl shadow-lg px-6 py-10 relative">
           <PageHeader />
 
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-800 mb-3 tracking-wide border-b border-slate-800 pb-2 inline-block">
-              Our Research
+          <div className="text-center mb-4">
+            <h2 className="text-4xl font-light text-slate-800 mb-2 tracking-wide border-b border-slate-800 pb-2 inline-block">
+              Research Summary
             </h2>
             <div className="mt-2">
               <a 
@@ -123,7 +123,7 @@ function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read the full literature review here
+                Download the full literature review here
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
@@ -151,30 +151,39 @@ function HomePage() {
           </nav>
           */}
 
-          <Carousel 
-            items={carouselItems} 
-            currentIndex={currentSlideIndex}
-            onIndexChange={setCurrentSlideIndex}
-            onScrollRequest={scrollRequest}
-          />
+          {/* C1: Carousel Section */}
+          <div className="bg-green-50 rounded-2xl p-8 shadow-sm mb-6">
+            <Carousel 
+              items={carouselItems} 
+              currentIndex={currentSlideIndex}
+              onIndexChange={setCurrentSlideIndex}
+              onScrollRequest={scrollRequest}
+            />
+          </div>
 
-          <div className="mt-20 text-center">
-            <h2 className="text-3xl font-light text-slate-800 mb-2 tracking-wide">
-              Hot Topics for Persons with Disabilities
-            </h2>
-            <p className="text-slate-600 text-lg mb-8 font-light tracking-wide">
-              A qualitative data analysis of Reddit posts pertaining to disability in BC, Canada
-            </p>
-            <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src={redditChart} 
-                alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
-                className="w-full h-auto"
-              />
+          {/* C2: Hot Topics Section */}
+          <div className="bg-rose-50 rounded-2xl p-8 shadow-sm mb-6">
+            <div className="text-center">
+              <h2 className="text-3xl font-light text-slate-800 mb-2 tracking-wide">
+                Hot Topics for Persons with Disabilities
+              </h2>
+              <p className="text-slate-600 text-lg mb-8 font-light tracking-wide">
+                A qualitative data analysis of Reddit posts pertaining to disability in BC, Canada
+              </p>
+              <div className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={redditChart} 
+                  alt="Chart showing hot topics discussed by people with disabilities on Reddit" 
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
 
-          <AccessibilityGoalCarousel />
+          {/* C3: Accessibility Goals Section */}
+          <div className="bg-blue-50 rounded-2xl p-8 shadow-sm">
+            <AccessibilityGoalCarousel />
+          </div>
 
         </div>
       </div>

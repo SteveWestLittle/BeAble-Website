@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import ArrowRight from '../components/ArrowRight';
 
 function ResourcesPage() {
   const canadaLinks = [
@@ -33,6 +34,30 @@ function ResourcesPage() {
             </h2>
           </div>
 
+          {/* Partnerships Section */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
+              Partnerships
+            </h2>
+            <div className="flex justify-center">
+              <a
+                href="https://glocalfoundation.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center group"
+              >
+                <img
+                  src="/media/glocal.png"
+                  alt="Glocal Foundation Logo"
+                  className="w-48 h-auto transition-transform group-hover:scale-105"
+                />
+                <p className="text-sm text-slate-600 mt-2 max-w-xs text-center">
+                  GLOCAL is a national not-for-profit organization that promotes digital civic engagement through local participation and global understanding in Canada.
+                </p>
+              </a>
+            </div>
+          </div>
+
           {/* Podcast Section */}
           <div className="max-w-3xl mx-auto mb-16">
             <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
@@ -57,52 +82,57 @@ function ResourcesPage() {
             </div>
           </div>
 
-          {/* Affiliate Links Section */}
-          <div className="max-w-3xl mx-auto mb-16">
-            <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
-              Affiliate Links
-            </h3>
-            <div className="flex justify-center">
-              <a 
-                href="https://glocalfoundation.ca/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
-              >
-                <span className="font-semibold">GLOCAL Foundation</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Canada's Disability Actions Section */}
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl font-light text-slate-800 mb-6 text-center">
+          {/* Canada's Disability Actions */}
+          <div className="max-w-3xl mx-auto mt-16">
+            <h2 className="text-3xl font-light text-slate-800 mb-6 tracking-wide text-center">
               Canada's Disability Actions
-            </h3>
-            <div className="space-y-6">
-              {canadaLinks.map((link, index) => (
-                <div 
-                  key={index}
-                  className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <a 
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <h4 className="text-xl font-semibold text-blue-600 mb-2 hover:text-blue-800 transition-colors">
-                      {link.title}
-                    </h4>
-                    <p className="text-slate-600">
-                      {link.description}
-                    </p>
-                  </a>
-                </div>
-              ))}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <a 
+                href="https://a11y.canada.ca/en/digital-accessibility-in-the-government-of-canada/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-all group"
+              >
+                <h3 className="text-xl font-semibold text-slate-800 mb-3 group-hover:text-rose-600 transition-colors">Digital Accessibility</h3>
+                <p className="text-slate-600 mb-3">
+                  Government of Canada's digital accessibility toolkit, providing standards, guidelines, and resources for creating accessible digital content.
+                </p>
+                <span className="text-rose-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </a>
+              <a 
+                href="https://accessible.canada.ca/creating-accessibility-standards"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-all group"
+              >
+                <h3 className="text-xl font-semibold text-slate-800 mb-3 group-hover:text-rose-600 transition-colors">Accessibility Standards</h3>
+                <p className="text-slate-600 mb-3">
+                  Standards development for employment, built environment, communication, and other priority areas identified in the Accessible Canada Act.
+                </p>
+                <span className="text-rose-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </a>
+              <a 
+                href="https://www.canada.ca/en/employment-social-development/programs/disability-inclusion-action-plan.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-all group"
+              >
+                <h3 className="text-xl font-semibold text-slate-800 mb-3 group-hover:text-rose-600 transition-colors">Disability Inclusion Plan</h3>
+                <p className="text-slate-600 mb-3">
+                  Action plan focusing on financial security, employment, accessible communities, and modernizing disability support programs.
+                </p>
+                <span className="text-rose-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </a>
             </div>
           </div>
 
